@@ -1,37 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Outfit', sans-serif;
-  margin: 0;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
   color: #262627;
-  font-weight: medium;
-  position: relative;
+  overflow-x: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
   text-align: center;
-  margin-top: 50px;
+  max-width: 800px;
+  width: 100%;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .birthday-text {
   font-size: 48px;
-  color: #262627;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
 }
 
 .images img {
-  max-width: 80%;
-  margin: 10px;
-  border-radius: 8px;
+  max-width: 90%;
+  margin: 20px auto;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-@keyframes confetti-fall {
-  0% {
-    opacity: 1;
-    transform: translateY(-50px) rotate(0deg);
-  }
-  100% {
+.images img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    transform: translateY(100vh) rotate(720deg);
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -50,4 +74,54 @@ body {
 
 .confetti:nth-child(3n) {
   background-color: #00e5ff;
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translateY(-50px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+/* Button Styles */
+button {
+  background-color: #262627;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 30px;
+}
+
+button:hover {
+  background-color: #ff6b6b;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 600px) {
+  .card-container {
+    padding: 20px;
+  }
+
+  .birthday-text {
+    font-size: 36px;
+  }
+
+  .images img {
+    max-width: 100%;
+    margin: 15px auto;
+  }
 }
