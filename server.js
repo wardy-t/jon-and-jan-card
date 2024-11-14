@@ -1,14 +1,18 @@
 const express = require('express');
 const app = express();
-const birthdayController = require('./controllers/birthdayController');
+const path = require('path');
 
+// Set up the view engine to use EJS
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
 
-// Define routes
-app.get('/', birthdayController.showCard);
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// Define a route to render the birthday card page
+app.get('/', (req, res) => {
+  res.render('card', { name: "Rachael", images: ["path/to/your/image.jpg"] });
 });
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

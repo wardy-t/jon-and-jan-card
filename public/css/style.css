@@ -1,84 +1,31 @@
-/* Main card styling */
-.birthday-card {
-    background-color: #FFF4F1; /* light pink background */
+body {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FFF4F1;
+  }
+  
+  .card-container {
+    background-color: #FFF;
     border-radius: 16px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     padding: 40px;
     max-width: 500px;
-    margin: 20px auto;
     text-align: center;
-    position: relative;
   }
   
-  /* Card title (header) */
-  .birthday-card h1 {
+  .birthday-text {
     font-size: 48px;
-    color: #FF6B6B; /* festive coral color */
+    color: #FF6B6B;
     font-weight: bold;
-    margin-bottom: 10px;
   }
   
-  /* Subheader styling */
-  .birthday-card h2 {
-    font-size: 24px;
-    color: #FFABAB; /* light pink */
-    margin-bottom: 20px;
-  }
-  
-  /* Text styling within the card */
-  .birthday-card p {
-    font-size: 18px;
-    color: #262627; /* dark text color for readability */
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  /* Styling for images in the card */
-  .birthday-card img {
+  .images img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 8px;
     margin-top: 20px;
-  }
-  
-  /* Button styling */
-  .birthday-card .action-button {
-    display: inline-block;
-    padding: 10px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #FFF;
-    background-color: #FF6B6B;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-  }
-  
-  .birthday-card .action-button:hover {
-    background-color: #FF4C4C; /* slightly darker coral */
-  }
-  
-  /* Confetti styling */
-  @keyframes confetti-fall {
-    0% { opacity: 1; transform: translateY(-200px) rotate(0deg); }
-    100% { opacity: 0; transform: translateY(800px) rotate(360deg); }
-  }
-  
-  .confetti-piece {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: #FF6B6B;
-    animation: confetti-fall 4s ease-in-out infinite;
-  }
-  
-  /* Different colors and positions for confetti */
-  .confetti-piece:nth-child(odd) { background-color: #FFD166; }
-  .confetti-piece:nth-child(even) { background-color: #06D6A0; }
-  
-  /* Adding subtle hover effect to the card */
-  .birthday-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
   }

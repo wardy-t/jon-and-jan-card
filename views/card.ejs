@@ -17,16 +17,12 @@
     <div id="confetti-container"></div>
   </div>
 
-  <!-- Confetti and animation -->
-  <script src="https://unpkg.com/canvas-confetti@1.5.0/dist/confetti.browser.min.js"></script>
+  <!-- Local Confetti Script -->
+  <script src="/js/confetti.browser.min.js"></script>
   <script>
-    // Function to trigger confetti on page load
     window.onload = function() {
-      // Start confetti
       var count = 200;
-      var defaults = {
-        origin: { y: 0.7 }
-      };
+      var defaults = { origin: { y: 0.7 } };
 
       function fireConfetti() {
         var interval = setInterval(function() {
@@ -46,7 +42,6 @@
           }));
         }, 200);
 
-        // Stop after 3 seconds
         setTimeout(function() {
           clearInterval(interval);
         }, 3000);
