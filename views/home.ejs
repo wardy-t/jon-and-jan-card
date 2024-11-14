@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, <%= name %>!</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="card-container">
+    <h1 class="birthday-text">Happy Birthday, <%= name %>!</h1>
+    <div class="images">
+      <% images.forEach(image => { %>
+        <img src="<%= image %>" alt="Birthday Image">
+      <% }); %>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+      createConfetti();
+    };
+
+    function createConfetti() {
+      const numberOfConfetti = 100; // Number of confetti pieces
+      const confettiContainer = document.body;
+      
+      for (let i = 0; i < numberOfConfetti; i++) {
+        const confettiPiece = document.createElement('div');
+        confettiPiece.classList.add('confetti');
+        confettiPiece.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+        confettiPiece.style.animationDelay = `${Math.random() * 2}s`; // Delay for staggered animation
+        confettiContainer.appendChild(confettiPiece);
+        
+        // Optional: Remove confetti after animation
+        setTimeout(() => {
+          confettiPiece.remove();
+        }, 3000); // Confetti piece disappears after 3 seconds
+      }
+    }
+  </script>
+</body>
+</html>

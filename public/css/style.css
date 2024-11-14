@@ -1,31 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 body {
-    font-family: 'Outfit', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #FFF4F1;
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  color: #262627;
+  font-weight: medium;
+  position: relative;
+}
+
+.card-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.birthday-text {
+  font-size: 48px;
+  color: #262627;
+}
+
+.images img {
+  max-width: 80%;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translateY(-50px) rotate(0deg);
   }
-  
-  .card-container {
-    background-color: #FFF;
-    border-radius: 16px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    max-width: 500px;
-    text-align: center;
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg);
   }
-  
-  .birthday-text {
-    font-size: 48px;
-    color: #FF6B6B;
-    font-weight: bold;
-  }
-  
-  .images img {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 20px;
-  }
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffeb3b;
+  opacity: 0;
+  animation: confetti-fall 2s ease-in-out infinite;
+}
+
+.confetti:nth-child(odd) {
+  background-color: #f50057;
+}
+
+.confetti:nth-child(3n) {
+  background-color: #00e5ff;
+}

@@ -1,6 +1,7 @@
-const path = require('path');
-
-exports.showCard = (req, res) => {
-  const images = ["/images/birthday1.jpg", "/images/birthday2.jpg"]; // Example images
-  res.render('card', { name: 'Rachael', images: images });
-};
+exports.showHomePage = (req, res) => {
+    const images = [
+      '/images/photo1.jpg',
+      '/images/photo2.jpg', // Add more images as needed
+    ];
+    res.render('home', { name: 'Rachael', images: images });
+  };
