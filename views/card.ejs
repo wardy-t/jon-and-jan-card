@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, <%= name %>!</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="card-container">
+    <h1 class="birthday-text">Happy Birthday, <%= name %>!</h1>
+    <div class="images">
+      <% images.forEach(image => { %>
+        <img src="<%= image %>" alt="Birthday Image">
+      <% }); %>
+    </div>
+    <div id="confetti-container"></div>
+  </div>
+
+  <!-- Confetti and animation -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti"></script>
+  <script>
+    // Function to trigger confetti on page load
+    window.onload = function() {
+      // Start confetti
+      var count = 200;
+      var defaults = {
+        origin: { y: 0.7 }
+      };
+
+      function fireConfetti() {
+        var interval = setInterval(function() {
+          canvasConfetti(Object.assign({}, defaults, {
+            particleCount: count,
+            angle: 60,
+            spread: 55,
+            startVelocity: 25,
+            colors: ['#ffeb3b', '#f50057', '#00e5ff']
+          }));
+          canvasConfetti(Object.assign({}, defaults, {
+            particleCount: count,
+            angle: 120,
+            spread: 55,
+            startVelocity: 25,
+            colors: ['#ffeb3b', '#f50057', '#00e5ff']
+          }));
+        }, 200);
+
+        // Stop after 3 seconds
+        setTimeout(function() {
+          clearInterval(interval);
+        }, 3000);
+      }
+
+      fireConfetti();
+    };
+  </script>
+</body>
+</html>
