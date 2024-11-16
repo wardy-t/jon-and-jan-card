@@ -17,6 +17,66 @@ body {
   align-items: center;
 }
 
+.row {
+  display: flex;
+  margin-bottom: 20px; /* Adds space between rows */
+}
+
+.column {
+  flex: 1; /* Each column takes up equal width */
+  padding: 20px;
+  background-color: lightblue;
+  margin: 5px; /* Adds space between columns */
+  text-align: center;
+}
+
+.slider {
+  position: relative;
+  width: 70%;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
 .card-container {
   background: white;
   border-radius: 20px;
