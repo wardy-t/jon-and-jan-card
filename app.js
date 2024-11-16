@@ -15,10 +15,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
   const name = "Rachael";  // Name of the birthday person
   const images = [
-    "https://via.placeholder.com/300x200?text=Image+1",
-    "https://via.placeholder.com/300x200?text=Image+2",
-    "https://via.placeholder.com/300x200?text=Image+3"
-  ];  // Sample images for demonstration
+    '/images/photo1.jpg',
+    '/images/photo2.jpg', 
+    '/images/photo3.jpg', 
+  ];
   res.render('home', { name, images });
 });
 
