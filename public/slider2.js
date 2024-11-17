@@ -1,6 +1,6 @@
 let currentIndex = 0;
 const slides = document.querySelectorAll('.slide');
-const slideInterval = setInterval(autoSlide, 3000); // Change slide every 3 seconds
+const slideInterval = setInterval(autoSlide, 5000); // Change slide every 3 seconds
 
 console.log(slides)
 

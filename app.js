@@ -4,6 +4,8 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
+const fs = require('fs');
+
 // Set up static files directory
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -15,9 +17,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
   const name = "Rachael";  // Name of the birthday person
   const images = [
-    '/images/photo1.jpg',
-    '/images/photo2.jpg', 
-    '/images/photo3.jpg', 
+    '/images/B.jpg',
+    '/images/A.jpg',
+    '/images/D.jpg', 
+    '/images/H.jpg', 
+    '/images/T.jpg', 
+    '/images/R.jpg', 
+    '/images/Z.jpg', 
   ];
   res.render('home', { name, images });
 });
@@ -26,3 +32,6 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+
+
+
