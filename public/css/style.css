@@ -12,14 +12,16 @@ body {
   color: #262627;
   overflow-x: hidden;
   height: 100vh;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
 }
 
 .row {
   display: flex;
-  margin-bottom: 20px; /* Adds space between rows */
+  margin-top:100px;
+  margin-bottom: 10px; /* Adds space between rows */
+  justify-content: center; /* Center items horizontally */
 }
 
 .column {
@@ -32,11 +34,16 @@ body {
 
 .slider {
   position: relative;
-  width: 70%;
+  width: 50%;
   max-width: 800px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 2s ease-in-out;
+  height: 300px; /* Set a fixed height for the slider */
+
 }
 
 .slides {
@@ -81,7 +88,7 @@ body {
   background: white;
   border-radius: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 30px 40px;
+  padding: 10px 20px;
   text-align: center;
   max-width: 800px;
   width: 100%;
@@ -92,7 +99,7 @@ body {
   font-size: 48px;
   font-weight: 700;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   letter-spacing: 2px;
 }
 
@@ -163,7 +170,6 @@ button {
 
 button:hover {
   background-color: #ff6b6b;
-  transform: scale(1.05);
 }
 
 button:focus {
