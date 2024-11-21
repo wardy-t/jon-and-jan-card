@@ -5,75 +5,224 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday, <%= name %>!</title>
+
+  <!-- The order you list the stylesheets sets the priority. For example placing CSS AFTER Bootstrap 
+   would mean CSS styles over-ride Bootstrap and vice-versa)-->
+  <!-- CSS styles -->
   <link rel="stylesheet" href="/css/style.css">
+  <!-- Bootstrap CSS from CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 </head>
 
 <body
-  style="background-image: url('/images/background_balloons.png'); background-size: cover; background-repeat: no-repeat;">
+  style="background-image: url('/images/background_balloons.png'); ">
 
-  <div class="row">
-    <div class="card-container">
-      <h1 class="birthday-text">Happy Birthday, <%= name %>!</h1>
-      <div class="images">
-        <% images.forEach(image=> { %>
-          <img src="<%= image %>" alt="bImage" style="width: 100px;">
-          <% }); %>
+  <!-- Audio Element (Hidden) -->
+  <audio id="myAudio"   autoplay loop>
+    <source src="/music/B-Day_Song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+
+    <!-- Floating Music Control Buttons -->
+    <div class="floating-controls">
+      <button onclick="playAudio()" id="playBtn" class="btn btn-info btn-sm w-50 mb-1">Play Music</button><br>
+      <button onclick="pauseAudio()" id="pauseBtn" class="btn btn-info btn-sm w-50 mb-1">Pause Music</button><br>
+      <button onclick="stopAudio()" id="stopBtn" class="btn btn-info btn-sm mb-1 w-50 text-wrap">For the love of God,
+        Stop the Music</button>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 col-sm-8">
+        <div class="card-container">
+          <h1 class="birthday-text">Happy Birthday, <%= name %>!</h1>
+          <div class="images">
+            <% images.forEach(image=> { %>
+              <img src="<%= image %>" alt="bImage" style="width: 100px;">
+              <% }); %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  
-  <div class="row">
-    <div class="slider">
-      <div class="slides">
-        <!-- Slide 1 -->
-        <div class="slide">
-          <img src="/images/slider/1.jpg" alt="Slide 1"  >
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="/images/slider/2.jpg" alt="Slide 2"  >
-        </div>
-        <!-- Slide 3 -->
-        <div class="slide">
-          <img src="/images/slider/3.jpg" alt="Slide 3"  >
-        </div>
-        <div class="slide">
-          <img src="/images/slider/4.jpg"  >
-        </div>
-        <div class="slide">
-          <img src="/images/slider/5.jpg"  >
-        </div>
-        <div class="slide">
-          <img src="/images/slider/6.jpg"  >
-        </div>
-        <div class="slide">
-          <img src="/images/slider/7.jpg"  >
-        </div>
-        <div class="slide">
-          <img src="/images/slider/8.jpg"  >
-        </div>
-        <div class="slide">
-          <img src="/images/slider/9.jpg"  >
-        </div>
-        <div class="slide">
-          <img src="/images/slider/10.jpg"  >
-        </div>
-        <div class="slide">
-          <img src="/images/slider/11.jpg"  >
-        </div>
-        <div class="slide">
-          <img src="/images/slider/12.jpg"  >
-        </div>
-        <div class="slide">
-          <img src="/images/slider/13.jpg"  >
+    <div class="row">
+      <div class="col-lg-12 col-sm-8 mx-auto">
+        <div class="slider mx-auto">
+          <div class="slides">
+            <div class="slide">
+              <img src="/images/slider/2.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/3.jpg" alt="Slide 3">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/12.jpg">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/4.jpg">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/5.jpg">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/7.jpg">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/8.jpg">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/9.jpg">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/10.jpg">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/1.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/13.jpg">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC00392.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC02070.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC00030.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC00115.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC00279.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC00506.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC00528.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC00660.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC00754.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC00856.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC00860.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC00927.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC01014.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC01013.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC01303.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC02834.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC02836.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/loly pop.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC02415.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC02519.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/DSC02521.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/Picture103.jpg">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/SDC13093.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/SDC10869.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/SDC11449.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/SDC11463.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/SDC12574.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/SDC12566.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/SDC12851.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/IMG_5624.JPG">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/Photo100.jpg">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/D100.jpg">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/D101.jpg">
+            </div>
+            <div class="slide">
+              <img src="/images/slider/Photo101.jpg">
+            </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0001.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0002.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0003.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0004.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0005.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0006.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0007.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0008.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0010.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0011.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0012.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0017.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0018.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0021.jpg"> </div>
+            <div class="slide"> <img src="/images/slider/IMG-20241119-WA0022.jpg"> </div>
+
+            <div class="slide">
+              <img src="/images/slider/Photo102.jpg">
+            </div>
+
+
+
+          </div>
+          <!-- Navigation buttons -->
+          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
       </div>
-      <!-- Navigation buttons -->
-      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-      <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
+
+    <div class="row">
+      <div class="cake mx-auto">
+        <img src="/images/cake.gif" width="280" height="280" class="img-fluid"></iframe>
+      </div>
+    </div>
+
+
   </div>
 
   <script src="slider2.js"></script>
@@ -102,6 +251,29 @@
       //setInterval(createConfetti, 10000);  // 10000 ms = 10 seconds repeat
     }
   </script>
+
+
+
+  <script>
+    const audio = document.getElementById('myAudio');
+
+    // Play Audio
+    function playAudio() {
+      audio.play();
+    }
+
+    // Pause Audio
+    function pauseAudio() {
+      audio.pause();
+    }
+
+    // Stop Audio
+    function stopAudio() {
+      audio.pause();
+      audio.currentTime = 0; // Reset to start
+    }
+  </script>
+
 </body>
 
 </html>
