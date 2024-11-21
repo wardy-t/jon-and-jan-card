@@ -83,10 +83,14 @@ body {
   max-width: 400px;
   justify-content: center;
   /* Horizontal centering */
+  border: 2px solid white;
+  border-radius: 60px;
   border-top: 20px solid transparent;
 }
 
 .cake {
+  border: 2px solid white;
+  border-radius: 60px;
   border-bottom: 200px solid transparent;
 }
 
