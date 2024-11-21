@@ -8,22 +8,52 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
   color: #262627;
   overflow-x: hidden;
   height: 100vh;
   display: grid;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+/* For mobile screens */
+@media (max-width: 767px) {
+  body {
+    background-size: cover;
+    /* Adjust the background size on mobile */
+    background-position: top center;
+    /* Position image at the top */
+    height: auto;
+    /* Allows body to adjust its height */
+
+  }
 }
 
 /* Floating button container */
 .floating-controls {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 10px;
+  right: 10px;
   z-index: 1000;
+  animation: jiggle 1s ease-in-out 2s;
+  /* Apply jiggle animation */
 }
+
+/* Keyframes for jiggle animation */
+@keyframes jiggle {
+  0% {transform: translateX(0);  }
+  15% {transform: translateX(-20px);}
+  30% {transform: translateX(20px);}
+  45% {transform: translateX(-20px);}
+  60% {transform: translateX(20px);}
+  75% {transform: translateX(-20px);}
+  90% {transform: translateX(20px);}
+  100% {transform: translateX(0);  }
+}
+
 
 /* Button styles */
 .music-btn {
@@ -51,10 +81,13 @@ body {
   text-align: center;
   animation: fadeIn 2s ease-in-out;
   max-width: 400px;
-  justify-content: center; /* Horizontal centering */
+  justify-content: center;
+  /* Horizontal centering */
   border-top: 20px solid transparent;
+}
 
-
+.cake {
+  border-bottom: 200px solid transparent;
 }
 
 .slides {
