@@ -17,32 +17,43 @@ body {
   align-items: center;
 }
 
-.row {
-  display: flex;
-  margin-top:100px;
-  margin-bottom: 10px; /* Adds space between rows */
-  justify-content: center; /* Center items horizontally */
+/* Floating button container */
+.floating-controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
-.column {
-  flex: 1; /* Each column takes up equal width */
-  padding: 20px;
-  background-color: lightblue;
-  margin: 5px; /* Adds space between columns */
-  text-align: center;
+/* Button styles */
+.music-btn {
+  margin: 5px;
+  /* Space between buttons */
+  border-radius: 50%;
+  /* Make buttons circular */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+/* Additional styles (optional) */
+.music-btn:hover {
+  opacity: 0.8;
+  /* Slight transparency on hover */
 }
 
 .slider {
   position: relative;
-  width: 50%;
-  max-width: 800px;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   animation: fadeIn 2s ease-in-out;
-  height: 300px; /* Set a fixed height for the slider */
+  max-width: 400px;
+  justify-content: center; /* Horizontal centering */
+  border-top: 20px solid transparent;
+
 
 }
 
@@ -62,7 +73,8 @@ body {
   display: block;
 }
 
-.prev, .next {
+.prev,
+.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -93,6 +105,8 @@ body {
   max-width: 800px;
   width: 100%;
   animation: fadeIn 2s ease-in-out;
+  margin-top: 100px;
+
 }
 
 .birthday-text {
@@ -120,6 +134,7 @@ body {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -148,6 +163,7 @@ body {
     opacity: 1;
     transform: translateY(-50px) rotate(0deg);
   }
+
   100% {
     opacity: 0;
     transform: translateY(100vh) rotate(720deg);
