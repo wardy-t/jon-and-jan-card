@@ -15,16 +15,10 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Home route
 app.get('/', (req, res) => {
-  const name = "Rachael";  // Name of the birthday person
+  const name = "John and Janet";  // Name of the birthday person
   const images = [
-//    '/images/B.jpg',
-    '/images/R.jpg', 
     '/images/A.jpg',
     '/images/D.jpg',
-    '/images/T.jpg', 
-    '/images/H.jpg', 
-    '/images/L.jpg',
-//    '/images/Z.jpg', 
   ];
   res.render('home', { name, images });
 });
