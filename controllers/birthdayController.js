@@ -5,3 +5,4 @@ exports.showHomePage = (req, res) => {
     ];
     res.render('home', { name: 'John and Janet', images: images });
   };
+
