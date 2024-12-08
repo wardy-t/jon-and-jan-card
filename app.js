@@ -32,6 +32,8 @@ app.get('/', (req, res) => {
       return res.status(500).send('Unable to scan directory');
     }
     const sliderImages = files.filter(file => /\.(jpg|jpeg|png|gif)$/i.test(file));
+    console.log("sliderImages");
+    console.log(sliderImages);
 
   res.render('home', { name, images, sliderImages });
   });
