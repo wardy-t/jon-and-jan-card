@@ -13,6 +13,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Start server
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
+
 // Home route
 app.get('/', (req, res) => {
   const name = "John and Janet";  // Name of the birthday person
@@ -20,13 +25,19 @@ app.get('/', (req, res) => {
     '/images/A.jpg',
     '/images/D.jpg',
   ];
-  res.render('home', { name, images });
+
+  const directoryPath = path.join(__dirname, 'public/images/slider');
+  fs.readdir(directoryPath, (err, files) => {
+    if (err) {
+      return res.status(500).send('Unable to scan directory');
+    }
+    const sliderImages = files.filter(file => /\.(jpg|jpeg|png|gif)$/i.test(file));
+
+  res.render('home', { name, images, sliderImages });
+  });
+
 });
 
-// Start server
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
 
 
 
